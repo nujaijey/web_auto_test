@@ -5,10 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.log4testng.Logger;
 import test.utils.Constant;
+
 
 public class BasePage {
     private WebDriver driver;
+    // log4j日志对象
+    private Logger logger = Logger.getLogger(BasePage.class);
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -40,6 +44,7 @@ public class BasePage {
      */
     public void typeData(By by,String typeData) {
         // 统一的操作日志
+        logger.info("给元素[" + by + "]输入数据[" + typeData + "]");
         waitElementVisible(by).sendKeys(typeData);
     }
 
@@ -49,6 +54,7 @@ public class BasePage {
      */
     public void clickElement(By by) {
         // 统一的操作日志
+        logger.info("点击元素[" + by + "]");
         waitElementClickable(by).click();
     }
 
@@ -59,7 +65,9 @@ public class BasePage {
      */
     public String getElementText(By by) {
         // 统一的操作日志
-        return waitElementVisible(by).getText();
+        String text = waitElementVisible(by).getText();
+        logger.info("获取元素[" + by + "]的文本值[" + text + "]");
+        return text;
     }
 
     /**
@@ -70,7 +78,9 @@ public class BasePage {
      */
     public String getElementAttributeValue(By by,String attributeName) {
         // 统一的操作日志
-        return waitElementVisible(by).getAttribute(attributeName);
+        String attributeValue = waitElementVisible(by).getAttribute(attributeName);
+        logger.info("获取元素[" + by + "]属性[" + attributeName + "]的属性值[" + attributeValue +"]");
+        return attributeValue;
     }
 
     /**

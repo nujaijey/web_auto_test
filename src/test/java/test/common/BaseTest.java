@@ -16,11 +16,13 @@ public class BaseTest {
      * @param browserName 浏览器名字
      * @return 驱动对象
      */
-    public static WebDriver openBrowser(String browserName) {
+    public WebDriver openBrowser(String browserName) {
         if (browserName.equals("chrome")) {
             // 打开Chrome浏览器
-//            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+//            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_87.exe");
             ChromeDriver chromeDriver = new ChromeDriver();
+            logger.info("打开chrome浏览器");
             // 访问网址 get方法
             // chromeDriver.get("https://www.baidu.com");
             return chromeDriver;
@@ -28,6 +30,7 @@ public class BaseTest {
             // 打开Firefox浏览器
             System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
             FirefoxDriver firefoxDriver = new FirefoxDriver();
+            logger.info("打开firefox浏览器");
             return firefoxDriver;
         }
         return null;
