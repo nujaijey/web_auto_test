@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
 
     // 登录成功验证
     @Test
-    public void LoginSuccess() throws Exception {
+    public void loginSuccess() throws Exception {
 //        driver.findElement(By.name("phone")).sendKeys(Constant.CORRECT_PHONE);
 //        driver.findElement(By.name("password")).sendKeys(Constant.CORRECT_PASSWORD);
 //        driver.findElement(By.xpath("//button[contains(text(),'登录')]")).click();
@@ -57,7 +57,7 @@ public class LoginTest extends BaseTest {
 
     // 登录手机号为空
 //    @Test
-//    public  void LoginFailure1() throws Exception {
+//    public  void loginFailure1() throws Exception {
 //        driver.findElement(By.name("phone")).sendKeys("");
 //        driver.findElement(By.name("password")).sendKeys("lemon123456");
 //        driver.findElement(By.xpath("//button[contains(text(),'登录')]")).click();
@@ -74,7 +74,7 @@ public class LoginTest extends BaseTest {
 
     // 登录手机号未授权
 //    @Test
-//    public void LoginFailure2() throws Exception {
+//    public void loginFailure2() throws Exception {
 //        driver.findElement(By.name("phone")).sendKeys("13226645549");
 //        driver.findElement(By.name("password")).sendKeys("lemon123456");
 //        driver.findElement(By.xpath("//button[contains(text(),'登录')]")).click();
@@ -90,7 +90,7 @@ public class LoginTest extends BaseTest {
 
     // 记住手机号验证
     @Test
-    public void RememberPhone() throws Exception {
+    public void rememberPhone() throws Exception {
 //        driver.findElement(By.name("phone")).sendKeys(Constant.CORRECT_PHONE);
 //        driver.findElement(By.name("password")).sendKeys(Constant.CORRECT_PASSWORD);
         LoginPage loginPage = new LoginPage(driver);
