@@ -17,4 +17,10 @@ public class Constant {
     public static final String NICK_NAME = "自动化测试帐号1";
     // 显式等待超时时间
     public static final int WAIT_TIMEOUT = 8;
+
+    public static final String BACKSTAGE_LOGIN_URL = "http://8.129.91.152:8765//Admin/Index/login.html";
+    public static final String BACKSTAGE_CORRECT_USERNAME= "lemon7";
+    public static final String BACKSTAGE_CORRECT_CORRECT_PASSWORD = "lemonbest";
+    public static final String VERIFICATION_CODE = "hapi";
+
 }

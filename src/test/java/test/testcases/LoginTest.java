@@ -1,15 +1,13 @@
-package test;
+package test.testcases;
 
 import org.testng.annotations.DataProvider;
-import pageobject.IndexPage;
-import pageobject.LoginPage;
+import test.pageobject.IndexPage;
+import test.pageobject.LoginPage;
 import test.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

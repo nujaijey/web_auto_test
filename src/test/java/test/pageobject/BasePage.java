@@ -1,6 +1,7 @@
-package pageobject;
+package test.pageobject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -85,12 +86,32 @@ public class BasePage {
 
     /**
      * 元素是否可见的二次封装
-     * @param by 元素对应by对象
+     * @param by 素对应by对象
      * @return 元素是否可见
      */
     public Boolean isElementDisplayed(By by) {
         // 统一的操作日志
         return waitElementVisible(by).isDisplayed();
+    }
+
+    /**
+     * 输入按键操作的二次封装
+     * @param by 元素对应by对象
+     * @param keys 输入的按键
+     */
+    public void typeKey(By by, Keys keys) {
+        // 统一的操作日志
+        logger.info("给元素[" + by + "]输入按键[" + keys + "]");
+        waitElementVisible(by).sendKeys(keys);
+    }
+
+    /**
+     * 切换iframe的二次封装
+     * @param by 元素对应by对象
+     */
+    public void switchIframe(By by) {
+        WebDriverWait wait = new WebDriverWait(driver,Constant.WAIT_TIMEOUT);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(by));
     }
 
 }
