@@ -54,8 +54,10 @@ public class InvestTest extends BaseTest {
                 Constant.BACKSTAGE_CORRECT_CORRECT_PASSWORD,Constant.VERIFICATION_CODE);
         // 5、后台建标
         BackStageMainPage backStageMainPage = new BackStageMainPage(driver);
-        backStageMainPage.addBid("13323234444","出去看看再看看再看再看","10","6","100000","7",
-                "2000000","广东广州","测试","22");
+        // 时间戳
+        Long timeStamp = System.currentTimeMillis();
+        backStageMainPage.addBid("13323234444","测试" + timeStamp,"10","6",
+                "100000", "7", "2000000","广东广州","测试","22");
         // 6、审核最新的一条标
         backStageMainPage.verifyLatestBid();
     }
