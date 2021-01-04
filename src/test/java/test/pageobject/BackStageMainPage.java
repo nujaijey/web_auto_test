@@ -37,6 +37,8 @@ public class BackStageMainPage extends BasePage {
 
     public void typeBorrower(String data) {
         typeData(borrowerBy, data);
+        typeKey(borrowerBy, Keys.ARROW_DOWN);
+        typeKey(borrowerBy, Keys.ENTER);
     }
 
     // 输入贷款标题loanTitle
@@ -130,8 +132,6 @@ public class BackStageMainPage extends BasePage {
         switchIframe(mainIframeBy);
         clickAddBid();
         typeBorrower(borrowerName);
-        typeKey(borrowerBy, Keys.ARROW_DOWN);
-        typeKey(borrowerBy, Keys.ENTER);
         typeLoanTitle(loanTitle);
         typeRate(rate);
         typeTerm(term);

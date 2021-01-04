@@ -36,9 +36,7 @@ public class LoginTest extends BaseTest {
 //        driver.findElement(By.xpath("//button[contains(text(),'登录')]")).click();
         // 要操作哪个页面的元素就初始化哪个页面的对象
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.typeMobilePhone(Constant.CORRECT_PHONE);
-        loginPage.typePassword(Constant.CORRECT_PASSWORD);
-        loginPage.clickLogin();
+        loginPage.loginSuccess(Constant.CORRECT_PHONE,Constant.CORRECT_PASSWORD);
         Thread.sleep(3000);
         // 断言
         // 1、登录之后页面title

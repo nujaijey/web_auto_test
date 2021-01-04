@@ -68,4 +68,10 @@ public class LoginPage extends BasePage {
         return getElementText(centerInfoBy);
     }
 
+    public void loginSuccess(String mobilePhone,String password) {
+        typeMobilePhone(mobilePhone);
+        typePassword(password);
+        clickLogin();
+    }
+
 }
