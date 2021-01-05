@@ -32,4 +32,9 @@ public class IndexPage extends BasePage {
         return isElementDisplayed(nickNameBy);
     }
 
+    public void clickRushToBid(String loanTitle) {
+        // 变量需要通过方法传入
+        clickElement(By.xpath("//span[contains(text(),'" + loanTitle + "')]/parent::div/parent::a/following-sibling::div[1]//a[text()='抢投标']"));
+    }
+
 }

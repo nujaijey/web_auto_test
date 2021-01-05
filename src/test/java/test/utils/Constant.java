@@ -3,7 +3,7 @@ package test.utils;
 // 参数化--常量提取
 public class Constant {
     // 服务地址
-    public static final String BASE_URL = "http://120.78.128.25:8765";
+    public static final String BASE_URL = "http://8.129.91.152:8765";
     // 登录地址
     public static final String LOGIN_URL = BASE_URL + "/Index/login.html";
     // 首页地址
@@ -18,7 +18,7 @@ public class Constant {
     // 显式等待超时时间
     public static final int WAIT_TIMEOUT = 8;
 
-    public static final String BACKSTAGE_LOGIN_URL = "http://8.129.91.152:8765//Admin/Index/login.html";
+    public static final String BACKSTAGE_LOGIN_URL = BASE_URL + "/Admin/Index/login.html";
     public static final String BACKSTAGE_CORRECT_USERNAME= "lemon7";
     public static final String BACKSTAGE_CORRECT_CORRECT_PASSWORD = "lemonbest";
     public static final String VERIFICATION_CODE = "hapi";
