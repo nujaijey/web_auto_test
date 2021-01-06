@@ -7,10 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import test.common.BaseTest;
-import test.pageobject.BackStageLoginPage;
-import test.pageobject.BackStageMainPage;
-import test.pageobject.BasePage;
-import test.pageobject.LoginPage;
+import test.pageobject.*;
 import test.utils.Constant;
 
 public class InvestTest extends BaseTest {
@@ -37,9 +34,17 @@ public class InvestTest extends BaseTest {
     }
 
     @Test
-    public void invest01() {
+    public void invest01() throws InterruptedException {
+        IndexPage indexPage = new IndexPage(driver);
+        indexPage.clickRushToBid(loanTitle);
+        LoanDetailPage loanDetailPage = new LoanDetailPage(driver);
+        Thread.sleep(2000);
+        loanDetailPage.typeInvestAmount("200");
+        Thread.sleep(2000);
+        loanDetailPage.clickBid();
 
     }
+
 
     @AfterMethod
     public void tearDownTest() {

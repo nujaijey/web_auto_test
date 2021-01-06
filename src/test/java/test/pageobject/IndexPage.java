@@ -26,7 +26,6 @@ public class IndexPage extends BasePage {
         clickElement(loginBy);
     }
 
-
     public boolean isNickNameDisplayed() {
 //        return driver.findElement(nickNameBy).isDisplayed();
         return isElementDisplayed(nickNameBy);
