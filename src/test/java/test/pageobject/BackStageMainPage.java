@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class BackStageMainPage extends BasePage {
-    WebDriver driver;
+    private WebDriver driver;
 
     public BackStageMainPage(WebDriver driver) {
         super(driver);
