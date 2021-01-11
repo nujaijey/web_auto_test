@@ -19,16 +19,16 @@ public class InvestTest extends BaseTest {
 
     @BeforeMethod
     public void setUpMethod() {
-    // 前置
-    // 1、打开浏览器
-    driver = openBrowser(Constant.BROWSER_TYPE);
-    // 2、访问登录地址
+        // 前置
+        // 1、打开浏览器
+        driver = openBrowser(Constant.BROWSER_TYPE);
+        // 2、访问登录地址
         driver.get(Constant.LOGIN_URL);
-    // 3、最大化浏览器
+        // 3、最大化浏览器
         driver.manage().window().maximize();
-    // 4、登录
+        // 4、登录
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginSuccess(Constant.CORRECT_PHONE,Constant.CORRECT_PASSWORD);
+        loginPage.loginSuccess(Constant.CORRECT_PHONE, Constant.CORRECT_PASSWORD);
     }
 
     @BeforeTest
@@ -59,14 +59,14 @@ public class InvestTest extends BaseTest {
         // 4、登录后台
         BackStageLoginPage backStageLoginPage = new BackStageLoginPage(driver);
         backStageLoginPage.loginSuccess(Constant.BACKSTAGE_CORRECT_USERNAME,
-                Constant.BACKSTAGE_CORRECT_CORRECT_PASSWORD,Constant.VERIFICATION_CODE);
+                Constant.BACKSTAGE_CORRECT_CORRECT_PASSWORD, Constant.VERIFICATION_CODE);
         // 5、后台建标
         BackStageMainPage backStageMainPage = new BackStageMainPage(driver);
         // 时间戳
         Long timeStamp = System.currentTimeMillis();
         loanTitle = "测试" + timeStamp;
-        backStageMainPage.addBid("13323234444",loanTitle,"10","6",
-                "100000", "7", "2000000","广东广州","测试","22");
+        backStageMainPage.addBid(Constant.BORROWER_PHONE, loanTitle, "10", "6",
+                "100000", "7", "2000000", "广东广州", "测试", "22");
         // 6、审核最新的一条标
         backStageMainPage.verifyLatestBid();
     }

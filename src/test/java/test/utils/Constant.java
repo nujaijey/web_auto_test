@@ -18,9 +18,13 @@ public class Constant {
     // 显式等待超时时间
     public static final int WAIT_TIMEOUT = 8;
 
+    // 后台登录地址
     public static final String BACKSTAGE_LOGIN_URL = BASE_URL + "/Admin/Index/login.html";
+    // 账号、密码、万能验证码
     public static final String BACKSTAGE_CORRECT_USERNAME= "lemon7";
     public static final String BACKSTAGE_CORRECT_CORRECT_PASSWORD = "lemonbest";
     public static final String VERIFICATION_CODE = "hapi";
 
+    // 借款人手机号码
+    public static final String BORROWER_PHONE = "13323234444";
 }
