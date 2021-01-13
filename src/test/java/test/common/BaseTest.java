@@ -7,6 +7,7 @@ import org.testng.log4testng.Logger;
 
 // 测试类共性提取
 public class BaseTest {
+    public WebDriver driver;
     // log4j日志对象
     private Logger logger = Logger.getLogger(BaseTest.class);
 
