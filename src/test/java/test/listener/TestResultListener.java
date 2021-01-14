@@ -35,6 +35,7 @@ public class TestResultListener implements IHookable {
     }
 
     // Attachment 附件
+    // value参数是为你的附件的名字 type参数是为你的附件类型
     @Attachment(value = "Java screenshot", type = "image/png")
     public byte[] saveScreenshot(byte[] screenShot) {
         return screenShot;
