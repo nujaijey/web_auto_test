@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="test.listener.TestResultListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="D:/IdeaProjects/web_auto_test">
+        <classes>
+<!--            <class name="test.testcases.InvestTest">-->
+<!--                <methods>-->
+<!--                    <include name="invest01"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="test.testcases.LoginTest">
+                <methods>
+<!--                    <include name="loginSuccess"/>-->
+<!--                    <include name="rememberPhone"/>-->
+<!--                    <include name="loginFailure01"/>-->
+                    <include name="loginFailure02"/>
+                </methods>
+            </class>
+<!--            <class name="testcase.LoginTest">-->
+<!--                <methods>-->
+<!--                    <include name="LoginSuccess"/>-->
+<!--                    <include name="LoginFailure1"/>-->
+<!--                    <include name="LoginFailure2"/>-->
+<!--                    <include name="RememberPhone"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+    </test>
+</suite>

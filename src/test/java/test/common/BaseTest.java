@@ -20,8 +20,8 @@ public class BaseTest {
     public WebDriver openBrowser(String browserName) {
         if (browserName.equals("chrome")) {
             // 打开Chrome浏览器
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-//            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_87.exe");
+//            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_87.exe");
             ChromeDriver chromeDriver = new ChromeDriver();
             logger.info("打开chrome浏览器");
             // 访问网址 get方法
