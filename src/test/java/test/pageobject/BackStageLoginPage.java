@@ -2,7 +2,7 @@ package test.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import test.utils.Constant;
+import test.common.BasePage;
 
 public class BackStageLoginPage extends BasePage {
     private WebDriver driver;

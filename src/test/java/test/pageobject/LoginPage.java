@@ -2,6 +2,7 @@ package test.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import test.common.BasePage;
 
 public class LoginPage extends BasePage {
     private WebDriver driver;

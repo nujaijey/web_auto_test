@@ -1,4 +1,4 @@
-package test.pageobject;
+package test.common;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -6,14 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.log4testng.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import test.utils.Constant;
 
 
 public class BasePage {
     private WebDriver driver;
     // log4j日志对象
-    private Logger logger = Logger.getLogger(BasePage.class);
+    private Logger logger = LoggerFactory.getLogger(BasePage.class);
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
