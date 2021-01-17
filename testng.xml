@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <!-- 监听器配置，让监听类生效 -->
     <listeners>
+        <!-- 监听用例的异常，用例失败截图 -->
+        <listener class-name="test.listener.AllureListener"></listener>
+        <!-- 用例失败重试全局生效 -->
+        <listener class-name="test.listener.RetryListener"></listener>
+        <!-- 监听用例的结果（成功/失败/跳过） -->
         <listener class-name="test.listener.TestResultListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true" name="D:/IdeaProjects/web_auto_test">

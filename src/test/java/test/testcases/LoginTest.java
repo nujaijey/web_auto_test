@@ -1,6 +1,7 @@
 package test.testcases;
 
 import org.testng.annotations.DataProvider;
+import test.listener.TestngRetry;
 import test.pageobject.IndexPage;
 import test.pageobject.LoginPage;
 import test.common.BaseTest;
@@ -29,6 +30,7 @@ public class LoginTest extends BaseTest {
     }
 
     // 登录成功验证
+    // retryAnalyzer失败重试监听(retryAnalyzer = TestngRetry.class)
     @Test
     public void loginSuccess() throws Exception {
 //        driver.findElement(By.name("phone")).sendKeys(Constant.CORRECT_PHONE);
@@ -138,7 +140,9 @@ public class LoginTest extends BaseTest {
 
     }
 
-    // 测试步骤、断言方式一样，数据不一样--数据驱动DataProvider
+    /**
+     *  测试步骤、断言方式一样，数据不一样--数据驱动DataProvider
+     */
     @DataProvider
     public Object [] [] getLoginFailureDatas01() {
         Object [] [] datas = {
@@ -174,11 +178,11 @@ public class LoginTest extends BaseTest {
     @DataProvider
     public Object [] [] getLoginFailureDatas02() {
         Object [] [] datas = {
-                {"13226645549","lemon123456","此账号没有经过授权，请联系管理员!"},
-                {"13323234545","LEMON123456","帐号或密码错误!"},
-                {"13323234545","lemon1234567","帐号或密码错误!"},
-                {"13323234545","lemon12345","帐号或密码错误!"},
-                {"13323234545","lemon 123456","帐号或密码错误!"}
+                {"13226645549","lemon123456","此账号没有经过授权，请联系管理!"},
+                {"13323234545","LEMON123456","帐号或密码错!"},
+                {"13323234545","lemon1234567","帐号或密码错!"},
+                {"13323234545","lemon12345","帐号或密码错!"},
+                {"13323234545","lemon 123456","帐号或密码错!"}
         };
         return datas;
     }

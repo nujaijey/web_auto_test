@@ -28,6 +28,13 @@ public class InvestTest extends BaseTest {
         loginPage.loginSuccess(Constant.CORRECT_PHONE, Constant.CORRECT_PASSWORD);
     }
 
+    /**
+     *  测试数据准备 --自动化方式
+     *  （1）接口方式  优点：数据正确性高 缺点：准备比较多的参数 --可以忽略不计
+     *  （2）数据库方式  优点：适合数据量大  缺点：表的依赖性强
+     *  （3）UI方式  优点：直观、符合业务  缺点：不稳定、效率低
+     *  一般是结合数据库和接口方式造数据
+     */
     @BeforeTest
     public void setUpTest() throws InterruptedException {
         addBidData();

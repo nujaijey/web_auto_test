@@ -10,6 +10,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import test.utils.Constant;
 
+/**
+ *  Page Object设计模式，页面元素/测试用例解耦，提高后期的可维护性+测试用例读取性
+ * 每一次操作元素之前都等待，提高测试脚本执行稳定性
+ * 页面对象共性提取（智能等待、点击、输入数据、获取元素文本值、属性值、元素是否可见等公用方法提取到父类BasePage）
+ * 所有的页面对象类都继承于BasePage
+ * log4j日志记录（BaseTest、BasePage类做记录）
+ */
 
 public class BasePage {
     private WebDriver driver;

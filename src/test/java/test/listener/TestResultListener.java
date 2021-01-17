@@ -1,43 +1,34 @@
 package test.listener;
 
-import io.qameta.allure.Attachment;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.testng.IHookCallBack;
-import org.testng.IHookable;
 import org.testng.ITestResult;
-import test.common.BaseTest;
+import org.testng.TestListenerAdapter;
 
-import java.io.File;
+/**
+ *  TestListenerAdapter：ITestListener适配器，存储所有运行的测试用例结果
+ *  TestResultListener：监听用例的结果（成功/失败/跳过）
+ *  解决TestNG的dataProvider与重启机制冲突问题
+ *  （1）TestResultListener继承TestListenerAdapter类，重写onTestSuccess和onTestFailure方法
+ *  （2）把当前重试次数currentTimes置为1
+ */
 
-public class TestResultListener implements IHookable {
+public class TestResultListener extends TestListenerAdapter {
     @Override
-    public void run(IHookCallBack iHookCallBack, ITestResult iTestResult) {
-        // If a test class implements this interface, its run() method will be invoked instead of each @Test method found
-        // 翻译的意思：一个类有去实现implements这个接口的话，那么当前的run方法将会替换掉测试类里面的@Test注解标注的测试方法
-        // 想要得到测试的结果信息
-        // 1、保证@Test注解标注的测试方法能够正常运行
-        iHookCallBack.runTestMethod(iTestResult);
-        // 2、判断用例结果是否正常
-        if (iTestResult.getThrowable() != null) {
-            // iTestResult参数提供了API getInstance 获取当前测试类的实例（对象）
-            BaseTest baseTest = (BaseTest) iTestResult.getInstance();
-            // 根据baseTest得到driver
-            WebDriver driver = baseTest.driver;
-            // 截图并把截图嵌入到Allure报表中
-            TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-            // 参数OutputType：截图的类型
-            byte[] screenShot = takesScreenshot.getScreenshotAs(OutputType.BYTES);
-            saveScreenshot(screenShot);
-        }
-
+    public void onTestSuccess(ITestResult tr) {
+        super.onTestSuccess(tr);
+        // dataProvider与重启机制冲突问题解决方法
+        // 1、在用例执行成功/失败后，把当前重试次数currentTimes置为1
+        // 2、testNG升级到7.0.0
+        TestngRetry.currentTimes = 1;
     }
 
-    // Attachment 附件
-    // value参数是为你的附件的名字 type参数是为你的附件类型
-    @Attachment(value = "Java screenshot", type = "image/png")
-    public byte[] saveScreenshot(byte[] screenShot) {
-        return screenShot;
+    @Override
+    public void onTestFailure(ITestResult tr) {
+        super.onTestFailure(tr);
+        TestngRetry.currentTimes = 1;
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult tr) {
+        super.onTestSkipped(tr);
     }
 }

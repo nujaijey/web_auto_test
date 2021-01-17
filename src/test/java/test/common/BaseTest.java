@@ -6,7 +6,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-// 测试类共性提取
+/**
+ *  测试类共性提取，所有测试类都是继承于BaseTest
+ *  log4j日志记录（BaseTest、BasePage类做记录）
+ */
+
 public class BaseTest {
     public WebDriver driver;
     // log4j日志对象
@@ -21,8 +25,8 @@ public class BaseTest {
     public WebDriver openBrowser(String browserName) {
         if (browserName.equals("chrome")) {
             // 打开Chrome浏览器
-//            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_87.exe");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+//            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver_87.exe");
             driver = new ChromeDriver();
             logger.info("打开chrome浏览器");
             // 访问网址 get方法

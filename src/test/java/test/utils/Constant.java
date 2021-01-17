@@ -1,6 +1,9 @@
 package test.utils;
 
-// 参数化--常量提取
+/**
+ *  参数化--常量提取
+ */
+
 public class Constant {
     // 服务地址
     public static final String BASE_URL = "http://8.129.91.152:8765";
@@ -27,4 +30,7 @@ public class Constant {
 
     // 借款人手机号码
     public static final String BORROWER_PHONE = "13323234444";
+
+    // 重试机制执行最大次数
+    public static final int MAX_RETRY_TIMES = 2;
 }
