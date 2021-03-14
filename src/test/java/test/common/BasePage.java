@@ -39,7 +39,7 @@ public class BasePage {
     /**
      * 等待元素可点击
      * @param by 元素对应by对象
-     * @return 可点击对象
+     * @return 可点击元素
      */
     public WebElement waitElementClickable(By by) {
         WebDriverWait wait = new WebDriverWait(driver,Constant.WAIT_TIMEOUT);
